@@ -19,7 +19,7 @@
     <div id="map"></div>
 
     <!-- Google Maps APIの読み込み -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC75S3Y-anO16qtnrb2PRqI-deZteuyAJ8&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 
     <script>
         function initMap() {
@@ -41,6 +41,7 @@
                     scrollwheel: true, // スクロールによるズームを有効化
                     draggable: false, // ドラッグによる移動を無効化
                     rotateControl: false, // 画面回転のコントロールを無効化
+                    disableDoubleClickZoom: true, // ダブルクリックによる移動無効化
                 }
             );
         }

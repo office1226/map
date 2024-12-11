@@ -41,8 +41,18 @@
                     scrollwheel: true, // スクロールによるズームを有効化
                     draggable: false, // ドラッグによる移動を無効化
                     rotateControl: false, // 画面回転のコントロールを無効化
+                    disableDoubleClickZoom: true, // ダブルクリックによる移動無効化
                 }
             );
+
+            // 追加設定: 例えばズームやドラッグを無効にする場合は、Mapのオプションを追加する
+            var mapOptions = {
+                zoom: 12,  // 地図のズームレベル
+                draggable: false,  // 地図のドラッグ無効化
+            };
+
+            // 追加の設定を適用
+            panorama.setOptions(mapOptions);
         }
     </script>
 </body>

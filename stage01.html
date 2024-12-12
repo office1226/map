@@ -53,7 +53,9 @@
     <script>
         function initMap() {
             // ストリートビューの中心位置
-            var streetViewCenter = { lat: 34.68722185044351, lng: 135.5203415003525 };
+            var streetViewCenter = { lat: 34.381058, lng: 135.289969 };
+
+            // var streetViewCenter = { lat: 34.68722185044351, lng: 135.5203415003525 };
 
             // ストリートビューの設定
             var panorama = new google.maps.StreetViewPanorama(
@@ -62,11 +64,6 @@
                     pov: { heading: 165, pitch: 0 },
                     addressControl: false,
                     fullscreenControl: false,
-                    
-                    linksControl: false,
-                    panControl: false,
-                    zoomControl: true,
-                    draggable: false,
                 }
             );
         }

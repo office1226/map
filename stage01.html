@@ -14,7 +14,7 @@
     z-index: 1; /* 他の要素と重ならないようにする */
 }
 
-        /* 番号（①）を上に表示 */
+        /* 番号（ｴﾘｱ①）を上に表示 */
         .number-overlay {
             position: absolute;
             top: 20px;
@@ -45,17 +45,15 @@
     <!-- Google Mapsのストリートビュー -->
     <div id="map"></div>
 
-    <!-- 番号（①） -->
-    <div class="number-overlay">①</div>
+    <!-- 番号（ｴﾘｱ①） -->
+    <div class="number-overlay">ｴﾘｱ①</div>
 
     <!-- Google Maps APIの読み込み -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC75S3Y-anO16qtnrb2PRqI-deZteuyAJ8&callback=initMap" async defer></script>
     <script>
         function initMap() {
             // ストリートビューの中心位置
-            var streetViewCenter = { lat: 34.4157421, lng: 135.3061507 };
-
-            // var streetViewCenter = { lat: 34.68722185044351, lng: 135.5203415003525 };
+            var streetViewCenter = { lat: 34.68722185044351, lng: 135.5203415003525 };
 
             // ストリートビューの設定
             var panorama = new google.maps.StreetViewPanorama(

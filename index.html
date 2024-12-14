@@ -1,87 +1,118 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ステージ選択</title>
-    <style>
-        /* ページ全体のレイアウト */
-        body {
-            font-family: 'Press Start 2P', cursive; /* ゲーム風のフォント */
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-image: url('https://www.example.com/game-background.jpg'); /* ゲームの背景画像 */
-            background-size: cover;
-            background-position: center;
-            color: white;
-            overflow: hidden; /* 画面外にはみ出さないように */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>場所あてゲーム</title>
+  <style>
+    /* ページ全体のレイアウト */
+    body {
+      font-family: 'Press Start 2P', cursive; /* ゲーム風のフォント */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #d3d3d3; /* オフホワイト */
 
-        /* ステージボタンのコンテナ */
-        .stage-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-            width: 100%;
-            max-width: 500px; /* 横幅を指定 */
-            padding: 20px;
-            box-sizing: border-box;
-            overflow-y: auto; /* 縦のスクロールを許可 */
-            max-height: 80vh; /* ビューポートの80%の高さまで表示 */
-        }
 
-        /* 各ステージボタンのスタイル */
-        .stage-button {
-            width: 100%;
-            margin: 15px 0;
-            padding: 20px;
-            background-color: #FF6347; /* 鮮やかな赤オレンジ色 */
-            color: white;
-            border: 3px solid #FFD700; /* ゴールドのボーダー */
-            border-radius: 10px;
-            font-size: 20px;
-            cursor: pointer;
-            text-align: center;
-            text-transform: uppercase; /* 大文字 */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            font-weight: bold;
-        }
+}
 
-        /* ボタンにホバーしたときのエフェクト */
-        .stage-button:hover {
-            background-color: #FF4500; /* ホバー時の色を変更 */
-            transform: scale(1.1); /* 少し拡大する */
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* シャドウを強く */
-        }
+    @keyframes scrollBackground {
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: -500px 0; /* 背景が動く距離 */
+      }
+    }
 
-        /* モバイル画面に最適化するための設定 */
-        @media (max-width: 600px) {
-            .stage-button {
-                font-size: 18px;
-                padding: 15px;
-            }
-        }
-    </style>
+    .container {
+      width: 100%;
+      max-width: 800px;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    /* 全体タイトルのスタイル */
+    .main-title {
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      margin: 20px 0;
+      color: #FFD700; /* ゴールド */
+      text-transform: uppercase;
+    }
+
+    /* サブタイトルのスタイル */
+    .subtitle {
+      font-size: 1.5rem;
+      margin: 20px 0 10px;
+      color: black;
+    }
+
+    /* ボタンのグループ */
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 50px;
+    }
+
+    .button-group button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #FF6347; /* 鮮やかな赤オレンジ */
+      color: white;
+      border: 2px solid #FFD700;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .button-group button:hover {
+      background-color: #FF4500;
+      transform: scale(1.1);
+    }
+
+    /* モバイル対応 */
+    @media (max-width: 600px) {
+      .button-group button {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="stage-container">
-        <button class="stage-button" onclick="window.location.href='stage01.html'">ステージ 1</button>
-        <button class="stage-button" onclick="window.location.href='stage02.html'">ステージ 2</button>
-        <button class="stage-button" onclick="window.location.href='stage03.html'">ステージ 3</button>
-        <button class="stage-button" onclick="window.location.href='stage04.html'">ステージ 4</button>
-        <button class="stage-button" onclick="window.location.href='stage05.html'">ステージ 5</button>
-        <button class="stage-button" onclick="window.location.href='stage06.html'">ステージ 6</button>
-        <button class="stage-button" onclick="window.location.href='stage07.html'">ステージ 7</button>
-        <button class="stage-button" onclick="window.location.href='stage08.html'">ステージ 8</button>
-        <button class="stage-button" onclick="window.location.href='stage09.html'">ステージ 9</button>
-        <button class="stage-button" onclick="window.location.href='stage10.html'">ステージ 10</button>
+  <h1 class="main-title">場所あてゲーム</h1>
+  <div class="container">
+
+    <div class="section">
+      <h2 class="subtitle"></h2>
+      <div class="button-group">
+        <button onclick="window.location.href='stage01.html'">エリア①</button>
+        <button onclick="window.location.href='stage02.html'">エリア②</button>
+        <button onclick="window.location.href='stage03.html'">エリア③</button>
+      </div>
     </div>
+
+    <div class="section">
+      <h2 class="subtitle"></h2>
+      <div class="button-group">
+        <button onclick="window.location.href='stage04.html'">エリア④</button>
+        <button onclick="window.location.href='stage05.html'">エリア⑤</button>
+        <button onclick="window.location.href='stage06.html'">エリア⑥</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="subtitle"></h2>
+      <div class="button-group">
+        <button onclick="window.location.href='stage07.html'">エリア⑦</button>
+        <button onclick="window.location.href='stage08.html'">エリア⑧</button>
+        <button onclick="window.location.href='stage09.html'">エリア⑨</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

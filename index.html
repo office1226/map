@@ -13,7 +13,8 @@
     }
 
     body {
-      font-family: 'Press Start 2P', cursive; /* ゲーム風のフォント */
+      font-family: 'ヒラギノ丸ゴ Pro W3', 'Hiragino Maru Gothic Pro', sans-serif; /* ヒラギノ丸ゴ */
+      /* font-family: 'Press Start 2P', cursive; ゲーム風のフォント */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -35,7 +36,7 @@
     }
 
     .container {
-      width: 100%;
+      /* width: 100%; */
       max-width: 800px;
       padding: 20px;
       box-sizing: border-box;
@@ -43,7 +44,7 @@
       background-color: rgba(211, 211, 211, 0.5); /* 半透明のオフホワイト背景 */
       border-radius: 15px; /* 角を丸める */
       margin-top: 10%; /* 上部に余白を追加して画面に収める */
-      flex-grow: 1; /* コンテナが余白を埋めるようにする */
+      /* flex-grow: 1; コンテナが余白を埋めるようにする */
     }
 
     /* 全体タイトルのスタイル */
@@ -62,7 +63,7 @@
       color: black;
     }
 
-    /* ボタンのグループ */ 
+    /* ボタンのグループ */  
     .button-group {
       display: flex;
       justify-content: center;
@@ -141,7 +142,7 @@
     </div>
 
     <div class="section">
-      <h2 class="subtitle">上級問題👹</h2>
+      <h2 class="subtitle">上級問題⚡</h2>
       <div class="button-group">
         <button class="advanced-button" onclick="window.location.href='stage07.html'">上級①</button>
         <button class="advanced-button" onclick="window.location.href='stage08.html'">上級②</button>
